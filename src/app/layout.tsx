@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { EVENT_DATA } from '@/data/event';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -63,9 +65,17 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <div id="main-content" className="flex-1 flex flex-col">
+        
+        {/* Global Site Shell Header */}
+        <Navbar />
+
+        {/* Main Content Area */}
+        <main id="main-content" className="flex-1 flex flex-col">
           {children}
-        </div>
+        </main>
+
+        {/* Global Site Shell Footer */}
+        <Footer />
       </body>
     </html>
   );
