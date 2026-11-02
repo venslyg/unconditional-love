@@ -116,11 +116,6 @@ export function Hero() {
                 <span>Venue Directions</span>
               </CTAButton>
             </div>
-
-            {/* Registration State Honest Notice */}
-            <p className="text-xs text-ink-subtle">
-              ℹ️ Public registration will open once authorized by the organizing committee.
-            </p>
           </div>
 
           {/* Right Column: Artistic Visual & Live Countdown */}
@@ -131,8 +126,8 @@ export function Hero() {
               <div className="relative rounded-2xl overflow-hidden bg-paper-light border-2 border-violet/20 shadow-xl art-paper-shadow p-2 sm:p-3">
                 <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-canvas">
                   <Image
-                    src="/images/ul3-invitation-reference.jpg"
-                    alt="Unconditional Love 3 - Hand-painted waterside gathering artistic scene"
+                    src="/images/ul3-hero-artwork.jpg"
+                    alt="Unconditional Love 3 - Hand-painted waterside youth gathering artistic painting"
                     fill
                     priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"

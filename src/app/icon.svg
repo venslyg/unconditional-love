@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="ulBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7961A6" />
+      <stop offset="60%" stop-color="#5D4589" />
+      <stop offset="100%" stop-color="#342944" />
+    </linearGradient>
+    <linearGradient id="ulGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2DA8A" />
+      <stop offset="100%" stop-color="#DA8968" />
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="32" height="32" rx="8" fill="url(#ulBgGrad)" />
+  <!-- Delicate Inner Border -->
+  <rect x="2" y="2" width="28" height="28" rx="6.5" fill="none" stroke="#E6C56F" stroke-width="0.8" stroke-opacity="0.5" />
+  <!-- Graceful Cross & Community Rays -->
+  <path d="M16 6 V22 M10.5 12.5 H21.5" stroke="url(#ulGoldGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Center Heart / Pearl -->
+  <circle cx="16" cy="12.5" r="1.4" fill="#FFFDF9" />
+  <!-- Painterly Waterside Wave Base for '3' -->
+  <path d="M10 25 C13.5 23, 18.5 23, 22 25" stroke="#E6C56F" stroke-width="1.8" stroke-linecap="round" />
+</svg>
+

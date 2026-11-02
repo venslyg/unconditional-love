@@ -21,6 +21,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: `${EVENT_DATA.name} — ${EVENT_DATA.theme} | Youth Gathering 2027`,
   description: `${EVENT_DATA.subtitle}. ${EVENT_DATA.dateDisplay} at ${EVENT_DATA.venue.name}, ${EVENT_DATA.venue.city}, ${EVENT_DATA.venue.country}.`,
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/icon.svg',
+  },
   keywords: [
     'Unconditional Love 3',
     'UL3',

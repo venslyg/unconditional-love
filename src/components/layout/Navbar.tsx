@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Calendar, MapPin, Ticket } from 'lucide-react';
 import { EVENT_DATA } from '@/data/event';
-import { Container } from '@/components/ui/Container';
 import { CTAButton } from '@/components/ui/CTAButton';
 
 const NAV_ITEMS = [
@@ -48,88 +47,86 @@ export function Navbar() {
     <header className={`sticky top-0 z-40 w-full border-b border-violet/10 transition-colors ${
       isOpen ? 'bg-canvas' : 'bg-canvas/90 backdrop-blur-md'
     }`}>
-      <Container size="lg">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          
-          {/* Brand Wordmark */}
-          <Link
-            href="/"
-            className="group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-deep rounded-md p-1"
-            aria-label={`${EVENT_DATA.name} — ${EVENT_DATA.theme}`}
+      <div className="w-full px-4 sm:px-8 lg:px-12 flex items-center justify-between h-16 sm:h-20">
+        
+        {/* Brand Wordmark (Far Left Corner) */}
+        <Link
+          href="/"
+          className="group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-deep rounded-md p-1 flex-shrink-0"
+          aria-label={`${EVENT_DATA.name} — ${EVENT_DATA.theme}`}
+        >
+          <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-ink group-hover:text-violet-deep transition-colors leading-none">
+            {EVENT_DATA.name}
+          </span>
+          <span className="font-display italic text-xs sm:text-sm text-violet-deep tracking-wide leading-tight">
+            {EVENT_DATA.theme}
+          </span>
+        </Link>
+
+        {/* Desktop Navigation Links (Center) */}
+        <nav
+          aria-label="Main Navigation"
+          className="hidden md:flex items-center gap-1 lg:gap-2 mx-auto"
+        >
+          {NAV_ITEMS.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'bg-violet/15 text-violet-deep font-semibold shadow-xs'
+                    : 'text-ink-muted hover:text-ink hover:bg-canvas'
+                }`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right Action: Register CTA (Far Right Corner) */}
+        <div className="hidden sm:flex items-center gap-3 flex-shrink-0">
+          <CTAButton
+            href="/register"
+            variant="coral"
+            size="sm"
+            className="shadow-xs"
           >
-            <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-ink group-hover:text-violet-deep transition-colors leading-none">
-              {EVENT_DATA.name}
-            </span>
-            <span className="font-display italic text-xs sm:text-sm text-violet-deep tracking-wide leading-tight">
-              {EVENT_DATA.theme}
-            </span>
-          </Link>
-
-          {/* Desktop Navigation Links */}
-          <nav
-            aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-1 lg:gap-2"
-          >
-            {NAV_ITEMS.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-3 py-1.5 rounded-full text-xs lg:text-sm font-medium transition-colors ${
-                    isActive
-                      ? 'bg-violet/15 text-violet-deep font-semibold shadow-xs'
-                      : 'text-ink-muted hover:text-ink hover:bg-canvas'
-                  }`}
-                  aria-current={isActive ? 'page' : undefined}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Right Action: Register CTA */}
-          <div className="hidden sm:flex items-center gap-3">
-            <CTAButton
-              href="/register"
-              variant="coral"
-              size="sm"
-              className="shadow-xs"
-            >
-              <Ticket className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Register Preview</span>
-            </CTAButton>
-          </div>
-
-          {/* Mobile Menu Hamburger Toggle */}
-          <div className="flex md:hidden items-center gap-2">
-            <CTAButton
-              href="/register"
-              variant="coral"
-              size="sm"
-              className="text-[11px] px-2.5 py-1 sm:hidden"
-            >
-              Register
-            </CTAButton>
-            <button
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-ink hover:text-violet-deep hover:bg-violet/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-deep transition-colors"
-              aria-label={isOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isOpen}
-              aria-controls="mobile-navigation"
-            >
-              {isOpen ? (
-                <X className="w-6 h-6" aria-hidden="true" />
-              ) : (
-                <Menu className="w-6 h-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-
+            <Ticket className="w-3.5 h-3.5" aria-hidden="true" />
+            <span>Register Preview</span>
+          </CTAButton>
         </div>
-      </Container>
+
+        {/* Mobile Menu Hamburger Toggle */}
+        <div className="flex md:hidden items-center gap-2 flex-shrink-0">
+          <CTAButton
+            href="/register"
+            variant="coral"
+            size="sm"
+            className="text-[11px] px-2.5 py-1 sm:hidden"
+          >
+            Register
+          </CTAButton>
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 rounded-lg text-ink hover:text-violet-deep hover:bg-violet/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-deep transition-colors"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isOpen ? (
+              <X className="w-6 h-6" aria-hidden="true" />
+            ) : (
+              <Menu className="w-6 h-6" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+
+      </div>
 
       {/* Mobile Drawer (100% Opaque & Isolated to prevent ghost text) */}
       {isOpen && (
