@@ -180,7 +180,7 @@ export function Navbar() {
           <div className="mt-8 pt-6 border-t border-violet/15 space-y-3 text-xs text-ink-muted bg-paper-warm/40 p-4 rounded-xl">
             <div className="flex items-center gap-2.5">
               <Calendar className="w-4 h-4 text-violet-deep flex-shrink-0" aria-hidden="true" />
-              <span className="font-medium text-ink">{EVENT_DATA.dateDisplay}</span>
+              <span className="font-medium text-ink">{EVENT_DATA.dateDisplay} • 2:30 PM (Doors 2 PM)</span>
             </div>
             <div className="flex items-center gap-2.5">
               <MapPin className="w-4 h-4 text-coral-deep flex-shrink-0" aria-hidden="true" />

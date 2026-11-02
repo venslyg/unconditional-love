@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
 
 interface CountdownProps {
-  targetDateIso?: string; // Default: '2027-01-20T00:00:00+05:30'
+  targetDateIso?: string; // Default: '2027-01-20T14:30:00+05:30' (2:30 PM Colombo Time)
 }
 
 interface TimeRemaining {
@@ -31,14 +31,14 @@ export function CountdownFallback() {
         ))}
       </div>
       <p className="text-[11px] text-ink-muted text-center mt-3">
-        Wednesday, January 20, 2027 • Colombo Time (UTC+5:30)
+        Wed, Jan 20, 2027 • 2:30 PM – 9:30 PM (Doors open 2:00 PM)
       </p>
     </div>
   );
 }
 
 export function Countdown({
-  targetDateIso = '2027-01-20T00:00:00+05:30',
+  targetDateIso = '2027-01-20T14:30:00+05:30',
 }: CountdownProps) {
   const [timeLeft, setTimeLeft] = useState<TimeRemaining | null>(null);
 
@@ -136,7 +136,7 @@ export function Countdown({
       </div>
 
       <p className="text-[11px] text-ink-muted text-center mt-3">
-        Wednesday, January 20, 2027 • Colombo Time (UTC+5:30)
+        Wed, Jan 20, 2027 • 2:30 PM – 9:30 PM (Doors open 2:00 PM)
       </p>
     </div>
   );

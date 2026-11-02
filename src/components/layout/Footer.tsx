@@ -32,7 +32,7 @@ export function Footer() {
             <div className="space-y-2 pt-2 text-xs text-ink-muted">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-violet-deep flex-shrink-0" aria-hidden="true" />
-                <span>{EVENT_DATA.dateDisplay}</span>
+                <span>{EVENT_DATA.dateDisplay} • 2:30 PM – 9:30 PM (Doors 2 PM)</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-coral-deep flex-shrink-0" aria-hidden="true" />

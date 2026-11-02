@@ -11,7 +11,6 @@ import {
   MapPin,
   Sparkles,
   Ticket,
-  AlertCircle,
   Music,
   BookOpen,
   Coffee,
@@ -84,12 +83,12 @@ export default function SchedulePage() {
         </Container>
       </section>
 
-      {/* 2. Truth in Data Schedule Status Banner */}
+      {/* 2. Confirmed Schedule Status Banner */}
       <section aria-label="Schedule Timing Notice">
         <Container size="lg">
-          <div className="art-card p-5 sm:p-6 art-paper-shadow border-l-4 border-l-coral flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="art-card p-5 sm:p-6 art-paper-shadow border-l-4 border-l-leaf-deep flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" aria-hidden="true" />
+              <CheckCircle2 className="w-5 h-5 text-leaf-deep flex-shrink-0 mt-0.5" aria-hidden="true" />
               <div className="space-y-1">
                 <h4 className="font-display font-bold text-sm text-ink">
                   Schedule Outline & Timing Confirmation
@@ -99,8 +98,8 @@ export default function SchedulePage() {
                 </p>
               </div>
             </div>
-            <span className="text-xs font-semibold px-3 py-1 rounded-full bg-coral/15 text-coral-deep whitespace-nowrap self-start sm:self-center">
-              Timings Announced Soon
+            <span className="text-xs font-semibold px-3 py-1 rounded-full bg-leaf/15 text-leaf-deep whitespace-nowrap self-start sm:self-center">
+              Confirmed: 2:30 PM – 9:30 PM (Doors 2 PM)
             </span>
           </div>
         </Container>

@@ -70,8 +70,9 @@ export function Hero() {
                   <Calendar className="w-4 h-4" aria-hidden="true" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-subtle block">Date</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-subtle block">Date & Hours</span>
                   <span className="text-xs sm:text-sm font-bold text-ink leading-tight block">{EVENT_DATA.dateDisplay}</span>
+                  <span className="text-[10px] text-ink-muted block font-medium">2:30 PM – 9:30 PM (Doors 2 PM)</span>
                 </div>
               </div>
 
@@ -155,7 +156,7 @@ export function Hero() {
             {/* Live Event Countdown */}
             <div className="w-full">
               <Suspense fallback={<CountdownFallback />}>
-                <Countdown targetDateIso="2027-01-20T00:00:00+05:30" />
+                <Countdown targetDateIso="2027-01-20T14:30:00+05:30" />
               </Suspense>
             </div>
 

@@ -63,7 +63,7 @@ export default function RegisterPage() {
                     <div>
                       <strong className="block text-ink font-semibold">Date & Time</strong>
                       <span className="text-ink-muted">{EVENT_DATA.dateDisplay}</span>
-                      <span className="block text-[11px] text-ink-subtle">Schedule to be announced</span>
+                      <span className="block text-[11px] text-ink-subtle">2:30 PM – 9:30 PM (Doors open 2:00 PM)</span>
                     </div>
                   </div>
 

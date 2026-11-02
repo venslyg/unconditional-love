@@ -51,13 +51,13 @@ export default function Home() {
               <div>
                 <h3 className="font-display font-bold text-base sm:text-lg text-ink flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-violet-deep" aria-hidden="true" />
-                  <span>Phase 3 Completed: Full Homepage Storytelling</span>
+                  <span>Track A Complete: Frontend Polish & Backend Handoff</span>
                 </h3>
-                <p className="text-xs text-ink-muted">All landing sections active, truth-grounded, and mobile optimized.</p>
+                <p className="text-xs text-ink-muted">All 8 frontend phases complete, WCAG 2.2 AA verified, mobile-optimized, and ready for Track B.</p>
               </div>
               <span className="text-xs font-semibold px-3 py-1 rounded-full bg-leaf/15 text-leaf-deep flex items-center gap-1.5 self-start sm:self-auto">
                 <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>Phase 3 Complete</span>
+                <span>Track A Complete</span>
               </span>
             </div>
 

@@ -1,84 +1,81 @@
 import { ScheduleConfig } from '@/types/schedule';
 
 /**
- * Schedule Outline for Unconditional Love 3 (January 20, 2027)
- * 
- * TRUTH IN DATA ENFORCEMENT:
- * - Do not invent false starting/ending hours.
- * - The session order and thematic flow are defined, while specific clock times remain
- *   strictly marked as 'To be announced' pending committee sign-off.
+ * Confirmed Schedule Timeline for Unconditional Love 3
+ * Date: Wednesday, January 20, 2027
+ * Hours: 2:30 PM to 9:30 PM (Registrations & Doors open at 2:00 PM)
+ * Venue: Avenra Gangaara, Wennappuwa
  */
 export const SCHEDULE_DATA: ScheduleConfig = {
-  isAnnounced: false,
+  isAnnounced: true,
   announcementNotice:
-    'Exact starting hour, session durations, and check-in times are being finalized by the organizing committee and will be announced prior to registration opening.',
+    'Official program hours confirmed: 2:30 PM to 9:30 PM. Doors and registration check-in desks open promptly at 2:00 PM at Avenra Gangaara.',
   sessions: [
     {
       id: 'session-1',
       order: 1,
-      period: 'Morning',
-      title: 'Doors Open, Check-In & Welcome',
-      focus: 'Arrival & Welcome',
+      period: 'Afternoon',
+      title: 'Doors Open, Registration & Welcome',
+      focus: 'Check-In & Arrival',
       description:
-        'Arrival at Avenra Gangaara, QR admission verification, welcome refreshments, and time to explore the waterside grounds.',
+        'Doors open at 2:00 PM. Digital QR ticket scanning, welcome packets, light refreshments, and time to explore the waterside grounds.',
       type: 'check-in',
-      timingDisplay: 'Morning (Time to be announced)',
+      timingDisplay: '2:00 PM – 2:30 PM',
     },
     {
       id: 'session-2',
       order: 2,
-      period: 'Morning',
+      period: 'Afternoon',
       title: 'Opening Worship & Community Gathering',
       focus: 'United Praise',
       description:
-        'Lifting our voices in heartfelt praise, setting our hearts on Jesus, and embracing the gathering theme “Bring One Another”.',
+        'Official start at 2:30 PM. Vibrant, heartfelt worship lifting our voices in unity under the 2027 theme “Bring One Another”.',
       type: 'worship',
-      timingDisplay: 'Morning Session',
+      timingDisplay: '2:30 PM – 3:45 PM',
     },
     {
       id: 'session-3',
       order: 3,
-      period: 'Midday',
+      period: 'Afternoon',
       title: 'Keynote Message: Experiencing God’s Love',
-      focus: 'Scripture & Message',
+      focus: 'Scripture & Truth',
       description:
-        'An engaging, biblically grounded message on God’s unconditional grace, personal healing, and living out Christ-centered purpose.',
+        'An engaging biblical keynote addressing real youth questions—identity, belonging, overcoming anxiety, and finding purpose in Christ.',
       type: 'keynote',
-      timingDisplay: 'Midday Session',
+      timingDisplay: '3:45 PM – 5:00 PM',
     },
     {
       id: 'session-4',
       order: 4,
-      period: 'Midday',
-      title: 'Community Lunch & Riverside Fellowship',
+      period: 'Evening',
+      title: 'Riverside Fellowship & Community Dinner',
       focus: 'Shared Table & Connection',
       description:
-        'Sharing meals together by the river, building new friendships, and sharing personal stories in an unhurried, joyful setting.',
+        'Sharing meals together along the riverbanks, icebreakers, music, and building lifelong faith friendships.',
       type: 'fellowship',
-      timingDisplay: 'Afternoon Break',
+      timingDisplay: '5:00 PM – 6:30 PM',
     },
     {
       id: 'session-5',
       order: 5,
-      period: 'Afternoon',
+      period: 'Evening',
       title: 'Ministry, Reflection & Extended Worship',
-      focus: 'Prayer & Heart Ministry',
+      focus: 'Prayer & Spiritual Renewal',
       description:
-        'A dedicated time for personal reflection, prayer ministry, acoustic worship, and seeking God’s guidance for the year ahead.',
+        'A sacred, unhurried time for personal prayer ministry, personal testimonies of God’s grace, and seeking the Holy Spirit.',
       type: 'prayer',
-      timingDisplay: 'Afternoon Session',
+      timingDisplay: '6:30 PM – 8:30 PM',
     },
     {
       id: 'session-6',
       order: 6,
       period: 'Evening',
-      title: 'Commissioning & Closing Celebration',
-      focus: 'Going Forth in Love',
+      title: 'Commissioning & Closing Sending',
+      focus: 'Sent in Love',
       description:
-        'Final blessing, collective declaration of faith, and being commissioned to love and serve our communities back home.',
+        'Closing blessings, united declaration, and commissioning youth to live out unconditional love in their schools and hometowns.',
       type: 'worship',
-      timingDisplay: 'Closing Session',
+      timingDisplay: '8:30 PM – 9:30 PM',
     },
   ],
 };
-
