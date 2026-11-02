@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section
       aria-label="Event Introduction"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-paper-light via-canvas to-paper-warm/50 border-b border-violet/10 pt-8 pb-16 sm:py-20 lg:py-28"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-paper-light via-canvas to-paper-warm/50 border-b border-violet/10 pt-10 pb-14 sm:py-20 lg:py-28"
     >
       {/* Full-width decorative background painted blobs / strokes */}
       <div

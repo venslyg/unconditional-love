@@ -45,7 +45,9 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-canvas/85 backdrop-blur-md border-b border-violet/10 transition-colors">
+    <header className={`sticky top-0 z-40 w-full border-b border-violet/10 transition-colors ${
+      isOpen ? 'bg-canvas' : 'bg-canvas/90 backdrop-blur-md'
+    }`}>
       <Container size="lg">
         <div className="flex items-center justify-between h-16 sm:h-20">
           
@@ -129,16 +131,16 @@ export function Navbar() {
         </div>
       </Container>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (100% Opaque & Isolated to prevent ghost text) */}
       {isOpen && (
         <div
           id="mobile-navigation"
-          className="fixed inset-x-0 top-[65px] sm:top-[81px] bottom-0 z-50 bg-canvas/95 backdrop-blur-xl border-t border-violet/15 flex flex-col justify-between p-6 overflow-y-auto md:hidden"
+          className="fixed inset-x-0 top-16 sm:top-20 bottom-0 z-50 bg-canvas border-t border-violet/15 flex flex-col justify-between p-6 overflow-y-auto md:hidden shadow-2xl"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
         >
-          <div className="space-y-6">
+          <div className="space-y-6 pt-2">
             <nav className="flex flex-col gap-2">
               {NAV_ITEMS.map((item) => {
                 const isActive = pathname === item.href;
@@ -150,7 +152,7 @@ export function Navbar() {
                     className={`px-4 py-3 rounded-xl text-base font-medium transition-all ${
                       isActive
                         ? 'bg-violet/15 text-violet-deep font-semibold shadow-xs'
-                        : 'text-ink hover:bg-canvas hover:text-violet-deep'
+                        : 'text-ink hover:bg-paper-warm hover:text-violet-deep'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -166,7 +168,7 @@ export function Navbar() {
                 onClick={closeMenu}
                 variant="coral"
                 size="lg"
-                className="w-full text-center py-3"
+                className="w-full text-center py-3 shadow-sm"
               >
                 <Ticket className="w-4 h-4" aria-hidden="true" />
                 <span>View Registration Preview</span>
@@ -175,18 +177,18 @@ export function Navbar() {
           </div>
 
           {/* Quick Event Summary in Drawer */}
-          <div className="mt-8 pt-6 border-t border-violet/10 space-y-3 text-xs text-ink-muted">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-violet-deep" aria-hidden="true" />
-              <span>{EVENT_DATA.dateDisplay}</span>
+          <div className="mt-8 pt-6 border-t border-violet/15 space-y-3 text-xs text-ink-muted bg-paper-warm/40 p-4 rounded-xl">
+            <div className="flex items-center gap-2.5">
+              <Calendar className="w-4 h-4 text-violet-deep flex-shrink-0" aria-hidden="true" />
+              <span className="font-medium text-ink">{EVENT_DATA.dateDisplay}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-coral-deep" aria-hidden="true" />
+            <div className="flex items-center gap-2.5">
+              <MapPin className="w-4 h-4 text-coral-deep flex-shrink-0" aria-hidden="true" />
               <span>{EVENT_DATA.venue.name}, {EVENT_DATA.venue.city}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Ticket className="w-4 h-4 text-gold-deep" aria-hidden="true" />
-              <span>{EVENT_DATA.fee.formatted} {EVENT_DATA.fee.unit}</span>
+            <div className="flex items-center gap-2.5">
+              <Ticket className="w-4 h-4 text-gold-deep flex-shrink-0" aria-hidden="true" />
+              <span className="font-semibold text-ink">{EVENT_DATA.fee.formatted} {EVENT_DATA.fee.unit}</span>
             </div>
           </div>
 
