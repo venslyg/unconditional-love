@@ -133,17 +133,6 @@ export function Hero() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  
-                  {/* Subtle painted overlay label */}
-                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-ink/75 backdrop-blur-md text-white text-xs flex items-center justify-between">
-                    <div>
-                      <span className="font-display font-semibold block text-sm">Avenra Gangaara</span>
-                      <span className="text-[10px] text-paper-warm opacity-90">Wennappuwa, Sri Lanka</span>
-                    </div>
-                    <span className="px-2 py-0.5 rounded-full bg-violet text-white text-[10px] font-bold">
-                      {EVENT_DATA.fee.formatted}
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
