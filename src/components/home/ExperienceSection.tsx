@@ -8,9 +8,9 @@ const PILLARS = [
     icon: Music,
     title: 'Heartfelt Worship & Praise',
     tag: 'Reverence & Joy',
-    colorBg: 'bg-violet/10',
+    colorBg: 'bg-violet/15',
     colorText: 'text-violet-deep',
-    colorBorder: 'border-violet/20',
+    cardGradient: 'bg-gradient-to-b from-violet-tint/90 via-paper-light to-paper-light border-violet/25',
     description:
       'Lifting our voices together in sincere adoration. Experience a worship atmosphere that is vibrant, authentic, and focused solely on honoring God.',
   },
@@ -18,9 +18,9 @@ const PILLARS = [
     icon: BookOpen,
     title: 'Transformational Word',
     tag: 'Truth & Encouragement',
-    colorBg: 'bg-coral/15',
+    colorBg: 'bg-coral/20',
     colorText: 'text-coral-deep',
-    colorBorder: 'border-coral/25',
+    cardGradient: 'bg-gradient-to-b from-coral-tint/90 via-paper-light to-paper-light border-coral/25',
     description:
       'Grounded in timeless scripture, addressing real-life struggles faced by young people—identity, purpose, mental health, and stepping out in faith.',
   },
@@ -28,9 +28,9 @@ const PILLARS = [
     icon: Coffee,
     title: 'Shared Community & Fellowship',
     tag: 'Belonging Together',
-    colorBg: 'bg-gold/15',
+    colorBg: 'bg-gold/25',
     colorText: 'text-gold-deep',
-    colorBorder: 'border-gold/25',
+    cardGradient: 'bg-gradient-to-b from-gold-tint/90 via-paper-light to-paper-light border-gold/30',
     description:
       'Meaningful conversations over lunch, laughter, and group sharing. Break out of your comfort zone and form genuine, Christ-centered friendships.',
   },
@@ -38,9 +38,9 @@ const PILLARS = [
     icon: Waves,
     title: 'Peaceful Riverside Space',
     tag: 'Avenra Gangaara',
-    colorBg: 'bg-water/15',
+    colorBg: 'bg-water/20',
     colorText: 'text-water-deep',
-    colorBorder: 'border-water/25',
+    cardGradient: 'bg-gradient-to-b from-water-tint/90 via-paper-light to-paper-light border-water/30',
     description:
       'Set against the tranquil waters of Wennappuwa, giving you the physical and mental margin to pause, reflect, pray, and recharge your spirit.',
   },
@@ -62,11 +62,11 @@ export function ExperienceSection() {
             return (
               <div
                 key={pillar.title}
-                className="art-card p-6 sm:p-7 art-paper-shadow flex flex-col justify-between hover:-translate-y-1 transition-all duration-300"
+                className={`rounded-2xl border p-6 sm:p-7 art-paper-shadow flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 shadow-md ${pillar.cardGradient}`}
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className={`w-12 h-12 rounded-xl ${pillar.colorBg} ${pillar.colorText} flex items-center justify-center`}>
+                    <div className={`w-12 h-12 rounded-xl ${pillar.colorBg} ${pillar.colorText} flex items-center justify-center shadow-xs`}>
                       <Icon className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${pillar.colorBg} ${pillar.colorText}`}>

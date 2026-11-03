@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { CTAButton } from '@/components/ui/CTAButton';
+import { ArtAccent } from '@/components/ui/ArtAccent';
 import { MapPin, Navigation, Sparkles, CheckCircle2, ExternalLink } from 'lucide-react';
 import { EVENT_DATA } from '@/data/event';
 
@@ -16,8 +17,15 @@ export function VenueSection() {
   ];
 
   return (
-    <section aria-labelledby="venue-heading" className="py-16 sm:py-24 bg-canvas">
-      <Container size="xl">
+    <section aria-labelledby="venue-heading" className="py-16 sm:py-24 bg-canvas relative overflow-hidden">
+      {/* Subtle riverside watercolor ambient accent */}
+      <ArtAccent
+        variant="water-wave"
+        color="#668C9D"
+        className="text-water/10 absolute top-0 inset-x-0 w-full pointer-events-none"
+      />
+
+      <Container size="xl" className="relative z-10">
         <SectionHeading
           badge="The Location"
           title="Avenra Gangaara, Wennappuwa"
@@ -57,7 +65,7 @@ export function VenueSection() {
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-violet text-white text-xs sm:text-sm font-semibold shadow-sm hover:bg-violet-deep transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-violet to-violet-deep text-white text-xs sm:text-sm font-semibold shadow-md hover:from-violet-deep hover:to-violet transition-all"
               >
                 <Navigation className="w-4 h-4" aria-hidden="true" />
                 <span>Get Driving Directions</span>
@@ -72,9 +80,15 @@ export function VenueSection() {
 
           {/* Right Address & Info Box */}
           <div className="lg:col-span-5">
-            <div className="art-card p-6 sm:p-8 art-paper-shadow space-y-5">
+            <div className="art-card-gallery p-6 sm:p-8 art-paper-shadow space-y-5 relative overflow-hidden">
+              <ArtAccent
+                variant="corner-flourish"
+                color="#668C9D"
+                className="absolute top-2 right-2 pointer-events-none opacity-40 w-7 h-7 rotate-90"
+              />
+
               <div className="flex items-center gap-3 pb-4 border-b border-violet/10">
-                <div className="w-10 h-10 rounded-xl bg-coral/15 text-coral-deep flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-coral/20 text-coral-deep flex items-center justify-center flex-shrink-0 shadow-xs">
                   <MapPin className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
@@ -100,7 +114,7 @@ export function VenueSection() {
                 </div>
               </div>
 
-              <div className="p-3 rounded-lg bg-canvas border border-violet/10 text-xs text-ink-muted">
+              <div className="p-3.5 rounded-xl bg-gradient-to-br from-paper-light to-water-tint/60 border border-water/20 text-xs text-ink-muted">
                 📌 <strong>Directions note:</strong> Approximately 1 hour drive from Negombo and easily reachable by public bus routes along the Colombo–Chilaw road.
               </div>
             </div>

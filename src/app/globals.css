@@ -3,7 +3,7 @@
 @theme {
   --color-canvas: #F8F4EA;
   --color-paper-light: #FFFDF9;
-  --color-paper-warm: #F3EBDD;
+  --color-paper-warm: #F4ECE1;
   
   --color-ink: #342944;
   --color-ink-muted: #5E5273;
@@ -38,8 +38,17 @@
   color-scheme: light;
 }
 
+/* Warm handmade paper canvas texture with gentle watercolor washes */
 body {
   background-color: var(--color-canvas);
+  background-image: 
+    radial-gradient(ellipse at 10% 5%, rgba(121, 97, 166, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 15%, rgba(218, 137, 104, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 15% 55%, rgba(230, 197, 111, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 85% 75%, rgba(102, 140, 157, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 95%, rgba(111, 149, 107, 0.04) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperNoise)' opacity='0.025'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-body);
   text-rendering: optimizeLegibility;
@@ -67,20 +76,51 @@ body {
 
 /* Painterly & Art-First Design Utility Classes */
 .art-paper-shadow {
-  box-shadow: 0 4px 20px -2px rgba(52, 41, 68, 0.06), 0 2px 6px -1px rgba(52, 41, 68, 0.04);
+  box-shadow: 
+    0 4px 20px -2px rgba(52, 41, 68, 0.06),
+    0 1px 3px 0 rgba(52, 41, 68, 0.03),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 .art-card {
   background-color: var(--color-paper-light);
-  border: 1px solid rgba(121, 97, 166, 0.15);
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px -4px rgba(52, 41, 68, 0.05);
+  border: 1px solid rgba(121, 97, 166, 0.16);
+  border-radius: 1.25rem;
+  box-shadow: 
+    0 10px 30px -4px rgba(52, 41, 68, 0.06),
+    0 2px 6px -1px rgba(52, 41, 68, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
 }
 
 .art-card-warm {
   background-color: var(--color-paper-warm);
-  border: 1px solid rgba(218, 137, 104, 0.2);
-  border-radius: 1rem;
+  border: 1px solid rgba(218, 137, 104, 0.22);
+  border-radius: 1.25rem;
+  box-shadow: 
+    0 10px 30px -4px rgba(52, 41, 68, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+.art-card-gallery {
+  background: linear-gradient(135deg, #FFFDF9 0%, #F9F5EC 100%);
+  border: 2px solid rgba(121, 97, 166, 0.18);
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 16px 40px -8px rgba(52, 41, 68, 0.09),
+    0 4px 12px -2px rgba(52, 41, 68, 0.04),
+    inset 0 0 0 3px rgba(230, 197, 111, 0.25);
+  position: relative;
+}
+
+/* Watercolor brush stroke highlight behind text */
+.art-brush-highlight {
+  background: linear-gradient(100deg, rgba(230, 197, 111, 0.35) 0%, rgba(218, 137, 104, 0.25) 100%);
+  padding: 0.1em 0.35em;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .art-pill {

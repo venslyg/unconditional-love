@@ -46,7 +46,7 @@ export function Hero() {
                 {EVENT_DATA.name}
               </h1>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 justify-center lg:justify-start">
-                <span className="text-2xl sm:text-3xl xl:text-4xl font-display italic text-violet-deep font-semibold">
+                <span className="art-brush-highlight text-2xl sm:text-3xl xl:text-4xl font-display italic text-violet-deep font-semibold">
                   “{EVENT_DATA.theme}”
                 </span>
                 <span className="hidden sm:inline-block text-ink-subtle">•</span>
@@ -65,8 +65,8 @@ export function Hero() {
 
             {/* Event Key Highlights Bar */}
             <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-left">
-              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-paper-light/90 border border-violet/10 art-paper-shadow">
-                <div className="w-9 h-9 rounded-lg bg-violet/10 text-violet-deep flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-gradient-to-br from-violet-tint/90 to-paper-light border border-violet/20 art-paper-shadow hover:-translate-y-0.5 transition-transform duration-200">
+                <div className="w-9 h-9 rounded-lg bg-violet/15 text-violet-deep flex items-center justify-center flex-shrink-0">
                   <Calendar className="w-4 h-4" aria-hidden="true" />
                 </div>
                 <div>
@@ -76,8 +76,8 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-paper-light/90 border border-violet/10 art-paper-shadow">
-                <div className="w-9 h-9 rounded-lg bg-coral/15 text-coral-deep flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-gradient-to-br from-coral-tint/90 to-paper-light border border-coral/25 art-paper-shadow hover:-translate-y-0.5 transition-transform duration-200">
+                <div className="w-9 h-9 rounded-lg bg-coral/20 text-coral-deep flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4" aria-hidden="true" />
                 </div>
                 <div>
@@ -87,8 +87,8 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-paper-light/90 border border-violet/10 art-paper-shadow">
-                <div className="w-9 h-9 rounded-lg bg-gold/15 text-gold-deep flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-gradient-to-br from-gold-tint/90 to-paper-light border border-gold/30 art-paper-shadow hover:-translate-y-0.5 transition-transform duration-200">
+                <div className="w-9 h-9 rounded-lg bg-gold/25 text-gold-deep flex items-center justify-center flex-shrink-0">
                   <Ticket className="w-4 h-4" aria-hidden="true" />
                 </div>
                 <div>
@@ -123,8 +123,20 @@ export function Hero() {
             
             {/* Themed Framed Artwork Card */}
             <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none">
-              <div className="relative rounded-2xl overflow-hidden bg-paper-light border-2 border-violet/20 shadow-xl art-paper-shadow p-2 sm:p-3">
-                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-canvas">
+              <div className="art-card-gallery p-2.5 sm:p-3.5 relative overflow-hidden">
+                {/* Decorative corner flourishes */}
+                <ArtAccent
+                  variant="corner-flourish"
+                  color="#7961A6"
+                  className="absolute top-2 left-2 pointer-events-none z-10 w-7 h-7 opacity-60"
+                />
+                <ArtAccent
+                  variant="corner-flourish"
+                  color="#E6C56F"
+                  className="absolute bottom-10 right-2 pointer-events-none z-10 w-7 h-7 rotate-180 opacity-60"
+                />
+
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-canvas border border-violet/15 shadow-inner">
                   <Image
                     src="/images/ul3-hero-artwork.jpg"
                     alt="Unconditional Love 3 - Hand-painted waterside youth gathering artistic painting"
@@ -133,6 +145,16 @@ export function Hero() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
                   />
+                </div>
+
+                {/* Handcrafted gallery title plaque */}
+                <div className="flex items-center justify-between px-2 pt-2.5 text-[11px] text-ink-subtle">
+                  <span className="font-display italic font-medium text-ink">
+                    “Bring One Another” — Gathering Artwork
+                  </span>
+                  <span className="text-[10px] tracking-wider uppercase font-semibold text-violet-deep">
+                    Avenra Gangaara
+                  </span>
                 </div>
               </div>
             </div>
