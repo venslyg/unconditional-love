@@ -60,20 +60,29 @@ export function VenueSection() {
             </ul>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex items-center gap-2.5 sm:gap-3 pt-2 w-full">
               <a
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-violet to-violet-deep text-white text-xs sm:text-sm font-semibold shadow-md hover:from-violet-deep hover:to-violet transition-all"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-violet to-violet-deep text-white text-xs sm:text-sm font-semibold shadow-md hover:from-violet-deep hover:to-violet transition-all flex-1 sm:flex-initial"
               >
-                <Navigation className="w-4 h-4" aria-hidden="true" />
-                <span>Get Driving Directions</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-70" aria-hidden="true" />
+                <Navigation className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span className="sm:hidden font-semibold">Directions</span>
+                <span className="hidden sm:inline font-semibold">Get Driving Directions</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-70 flex-shrink-0" aria-hidden="true" />
               </a>
 
-              <CTAButton href="/contact" variant="outline" size="md">
-                <span>View Venue Guide</span>
+              <CTAButton
+                href="/contact"
+                variant="outline"
+                size="md"
+                className="p-2.5 sm:px-5 flex-shrink-0"
+                aria-label="Venue Guide"
+                title="Venue Guide"
+              >
+                <MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span className="hidden sm:inline font-medium">View Venue Guide</span>
               </CTAButton>
             </div>
           </div>

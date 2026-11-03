@@ -102,14 +102,27 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
-            <CTAButton href="/register" variant="coral" size="md">
-              <Ticket className="w-4 h-4" aria-hidden="true" />
-              <span>Preview Registration Details</span>
+          <div className="pt-4 flex items-center justify-center gap-2.5 sm:gap-3 w-full">
+            <CTAButton
+              href="/register"
+              variant="coral"
+              size="md"
+              className="flex-1 sm:flex-initial justify-center"
+            >
+              <Ticket className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="sm:hidden font-semibold">Register Preview</span>
+              <span className="hidden sm:inline font-semibold">Preview Registration Details</span>
             </CTAButton>
-            <CTAButton href="/schedule" variant="outline" size="md">
-              <Compass className="w-4 h-4" aria-hidden="true" />
-              <span>Explore Day Schedule</span>
+            <CTAButton
+              href="/schedule"
+              variant="outline"
+              size="md"
+              className="p-2.5 sm:px-5 flex-shrink-0"
+              aria-label="Day Schedule"
+              title="Day Schedule"
+            >
+              <Compass className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="hidden sm:inline font-medium">Explore Day Schedule</span>
             </CTAButton>
           </div>
         </Container>

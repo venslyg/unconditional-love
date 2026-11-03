@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { CTAButton } from '@/components/ui/CTAButton';
 import { ArtAccent } from '@/components/ui/ArtAccent';
-import { Ticket, Calendar, MapPin, Sparkles } from 'lucide-react';
+import { Ticket, Calendar, MapPin, Sparkles, Navigation } from 'lucide-react';
 import { EVENT_DATA } from '@/data/event';
 
 export function FinalCTASection() {
@@ -73,13 +73,27 @@ export function FinalCTASection() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-3">
-            <CTAButton href="/register" variant="coral" size="lg" className="shadow-md">
-              <Ticket className="w-4 h-4" aria-hidden="true" />
-              <span>View Registration Preview</span>
+          <div className="flex items-center justify-center gap-2.5 sm:gap-4 pt-3 w-full">
+            <CTAButton
+              href="/register"
+              variant="coral"
+              size="md"
+              className="shadow-md flex-1 sm:flex-initial justify-center"
+            >
+              <Ticket className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="sm:hidden font-semibold">Register Preview</span>
+              <span className="hidden sm:inline font-semibold">View Registration Preview</span>
             </CTAButton>
-            <CTAButton href="/contact" variant="outline" size="lg">
-              <span>Location & Directions</span>
+            <CTAButton
+              href="/contact"
+              variant="outline"
+              size="md"
+              className="p-2.5 sm:px-5 sm:py-2.5 flex-shrink-0"
+              aria-label="Location & Directions"
+              title="Location & Directions"
+            >
+              <Navigation className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="hidden sm:inline font-medium">Location & Directions</span>
             </CTAButton>
           </div>
 

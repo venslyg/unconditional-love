@@ -11,6 +11,7 @@ interface CTAButtonProps {
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
   'aria-label'?: string;
+  title?: string;
 }
 
 export function CTAButton({
@@ -23,6 +24,7 @@ export function CTAButton({
   disabled = false,
   type = 'button',
   'aria-label': ariaLabel,
+  title,
 }: CTAButtonProps) {
   const baseClasses =
     'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-deep focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none disabled:active:scale-100 cursor-pointer select-none';
@@ -50,7 +52,7 @@ export function CTAButton({
 
   if (href && !disabled) {
     return (
-      <Link href={href} className={combinedClasses} aria-label={ariaLabel}>
+      <Link href={href} className={combinedClasses} aria-label={ariaLabel} title={title}>
         {children}
       </Link>
     );
@@ -63,6 +65,7 @@ export function CTAButton({
       disabled={disabled}
       className={combinedClasses}
       aria-label={ariaLabel}
+      title={title}
     >
       {children}
     </button>

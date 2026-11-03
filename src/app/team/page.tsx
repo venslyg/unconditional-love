@@ -152,13 +152,27 @@ export default function TeamPage() {
               We welcome youth and mentors who want to volunteer in hospitality, ushering, prayer, and logistics. Reach out to our organizing committee to learn about serving opportunities.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-              <CTAButton href="/contact" variant="coral" size="md">
-                <Mail className="w-4 h-4" aria-hidden="true" />
-                <span>Contact Organizing Committee</span>
+            <div className="pt-2 flex items-center justify-center gap-2.5 sm:gap-3 w-full">
+              <CTAButton
+                href="/contact"
+                variant="coral"
+                size="md"
+                className="flex-1 sm:flex-initial justify-center"
+              >
+                <Mail className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span className="sm:hidden font-semibold">Contact Committee</span>
+                <span className="hidden sm:inline font-semibold">Contact Organizing Committee</span>
               </CTAButton>
-              <CTAButton href="/" variant="outline" size="md">
-                <span>Return to Home</span>
+              <CTAButton
+                href="/"
+                variant="outline"
+                size="md"
+                className="p-2.5 sm:px-5 flex-shrink-0"
+                aria-label="Return to Home"
+                title="Return to Home"
+              >
+                <span className="sm:hidden font-medium">Home</span>
+                <span className="hidden sm:inline font-medium">Return to Home</span>
               </CTAButton>
             </div>
           </div>

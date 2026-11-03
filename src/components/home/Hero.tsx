@@ -99,21 +99,41 @@ export function Hero() {
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1.5">
-              <CTAButton href="/register" variant="coral" size="lg" className="shadow-md">
-                <Ticket className="w-4 h-4" aria-hidden="true" />
-                <span>Explore Registration Preview</span>
+            {/* CTAs - Mobile-Optimized Icon Bar / Full on Desktop */}
+            <div className="w-full flex items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-1.5">
+              <CTAButton
+                href="/register"
+                variant="coral"
+                size="md"
+                className="shadow-md flex-1 sm:flex-initial justify-center"
+              >
+                <Ticket className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span className="sm:hidden font-semibold">Register Preview</span>
+                <span className="hidden sm:inline font-semibold">Explore Registration Preview</span>
               </CTAButton>
 
-              <CTAButton href="/about" variant="outline" size="lg">
-                <Compass className="w-4 h-4" aria-hidden="true" />
-                <span>Our Mission</span>
+              <CTAButton
+                href="/about"
+                variant="outline"
+                size="md"
+                className="p-2.5 sm:px-5 sm:py-2.5 flex-shrink-0"
+                aria-label="Our Mission"
+                title="Our Mission"
+              >
+                <Compass className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span className="hidden sm:inline font-medium">Our Mission</span>
               </CTAButton>
 
-              <CTAButton href="/contact" variant="pill" size="lg">
-                <Navigation className="w-4 h-4" aria-hidden="true" />
-                <span>Venue Directions</span>
+              <CTAButton
+                href="/contact"
+                variant="pill"
+                size="md"
+                className="p-2.5 sm:px-5 sm:py-2.5 flex-shrink-0"
+                aria-label="Venue Directions"
+                title="Venue Directions"
+              >
+                <Navigation className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span className="hidden sm:inline font-medium">Venue Directions</span>
               </CTAButton>
             </div>
           </div>

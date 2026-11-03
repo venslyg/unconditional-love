@@ -34,14 +34,27 @@ export function TeamTeaserSection() {
             <span>Official organizer bios & leadership roster to be announced in Phase 4</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <CTAButton href="/team" variant="outline" size="md">
-              <Users className="w-4 h-4" aria-hidden="true" />
-              <span>Meet the Organizing Committee</span>
+          <div className="flex items-center justify-center gap-2.5 sm:gap-3 pt-2 w-full">
+            <CTAButton
+              href="/team"
+              variant="outline"
+              size="md"
+              className="flex-1 sm:flex-initial justify-center"
+            >
+              <Users className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="sm:hidden font-medium">Team Committee</span>
+              <span className="hidden sm:inline font-medium">Meet the Organizing Committee</span>
             </CTAButton>
-            <CTAButton href="/about" variant="pill" size="md">
-              <Heart className="w-4 h-4 text-coral" aria-hidden="true" />
-              <span>Read Our Story</span>
+            <CTAButton
+              href="/about"
+              variant="pill"
+              size="md"
+              className="p-2.5 sm:px-5 flex-shrink-0"
+              aria-label="Read Our Story"
+              title="Read Our Story"
+            >
+              <Heart className="w-4 h-4 text-coral flex-shrink-0" aria-hidden="true" />
+              <span className="hidden sm:inline font-medium">Read Our Story</span>
             </CTAButton>
           </div>
         </div>

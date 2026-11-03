@@ -57,8 +57,9 @@ export function FAQPreviewSection() {
 
         <div className="text-center pt-10">
           <CTAButton href="/faq" variant="outline" size="md">
-            <span>View All Frequently Asked Questions</span>
-            <ChevronRight className="w-4 h-4" aria-hidden="true" />
+            <span className="sm:hidden font-medium">View All FAQs</span>
+            <span className="hidden sm:inline font-medium">View All Frequently Asked Questions</span>
+            <ChevronRight className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
           </CTAButton>
         </div>
       </Container>

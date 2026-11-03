@@ -188,14 +188,27 @@ export default function SchedulePage() {
             </div>
           </div>
 
-          <div className="pt-10 flex flex-wrap items-center justify-center gap-4">
-            <CTAButton href="/register" variant="coral" size="md">
-              <Ticket className="w-4 h-4" aria-hidden="true" />
-              <span>Preview Registration</span>
+          <div className="pt-10 flex items-center justify-center gap-2.5 sm:gap-4 w-full">
+            <CTAButton
+              href="/register"
+              variant="coral"
+              size="md"
+              className="flex-1 sm:flex-initial justify-center"
+            >
+              <Ticket className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="sm:hidden font-semibold">Register</span>
+              <span className="hidden sm:inline font-semibold">Preview Registration</span>
             </CTAButton>
-            <CTAButton href="/contact" variant="outline" size="md">
-              <MapPin className="w-4 h-4" aria-hidden="true" />
-              <span>Venue Directions</span>
+            <CTAButton
+              href="/contact"
+              variant="outline"
+              size="md"
+              className="p-2.5 sm:px-5 flex-shrink-0"
+              aria-label="Venue Directions"
+              title="Venue Directions"
+            >
+              <MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="hidden sm:inline font-medium">Venue Directions</span>
             </CTAButton>
           </div>
         </Container>
