@@ -17,37 +17,36 @@ interface TimeRemaining {
 
 export function CountdownFallback() {
   return (
-    <div className="w-full bg-paper-light/95 sm:bg-paper-light/92 backdrop-blur-md rounded-xl p-2 sm:p-2.5 border border-violet/25 shadow-xl text-ink">
-      <div className="flex items-center justify-between px-1 pb-1.5 border-b border-violet/15">
-        <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-violet-deep">
-          <Sparkles className="w-3 h-3 text-gold-deep" aria-hidden="true" />
-          <span>Countdown to Gathering</span>
-        </div>
-        <span className="text-[10px] text-ink-subtle font-medium hidden xs:inline-block">
-          Wed, Jan 20, 2027
-        </span>
+    <div className="w-full rounded-2xl bg-paper-light border border-violet/15 art-paper-shadow p-4 sm:p-5 text-ink">
+      <div className="flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-wider text-violet-deep mb-3.5">
+        <Sparkles className="w-3.5 h-3.5 text-gold-deep" aria-hidden="true" />
+        <span>Countdown to Gathering Day</span>
       </div>
 
-      <div className="grid grid-cols-4 gap-1.5 sm:gap-2 pt-2 text-center">
+      <div className="grid grid-cols-4 gap-2.5 sm:gap-3 w-full text-center">
         {[
-          { label: 'Days', bg: 'bg-violet/15', text: 'text-violet-deep', border: 'border-violet/25' },
-          { label: 'Hours', bg: 'bg-coral/20', text: 'text-coral-deep', border: 'border-coral/25' },
-          { label: 'Mins', bg: 'bg-gold/30', text: 'text-ink', border: 'border-gold/35' },
-          { label: 'Secs', bg: 'bg-water/20', text: 'text-water-deep', border: 'border-water/25' },
+          { label: 'Days', bg: 'bg-gradient-to-b from-violet-tint to-paper-light', text: 'text-violet-deep', border: 'border-violet/20' },
+          { label: 'Hours', bg: 'bg-gradient-to-b from-coral-tint to-paper-light', text: 'text-coral-deep', border: 'border-coral/20' },
+          { label: 'Mins', bg: 'bg-gradient-to-b from-gold-tint to-paper-light', text: 'text-ink', border: 'border-gold/25' },
+          { label: 'Secs', bg: 'bg-gradient-to-b from-water-tint to-paper-light', text: 'text-water-deep', border: 'border-water/25' },
         ].map((unit) => (
           <div
             key={unit.label}
-            className={`flex flex-col items-center justify-center py-1 sm:py-1.5 px-1 rounded-lg ${unit.bg} border ${unit.border} shadow-xs`}
+            className={`flex flex-col items-center justify-center py-2.5 sm:py-3 px-1 rounded-xl ${unit.bg} border ${unit.border} shadow-xs`}
           >
-            <span className={`text-xl sm:text-2xl lg:text-3xl font-display font-black leading-none ${unit.text}`}>
+            <span className={`text-2xl sm:text-3xl font-display font-black leading-none ${unit.text}`}>
               --
             </span>
-            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-ink mt-0.5">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-ink-muted mt-1.5">
               {unit.label}
             </span>
           </div>
         ))}
       </div>
+
+      <p className="text-[11px] text-ink-muted text-center mt-3 font-medium">
+        Wed, Jan 20, 2027 • 2:30 PM – 9:30 PM (Doors open 2:00 PM)
+      </p>
     </div>
   );
 }
@@ -93,8 +92,8 @@ export function Countdown({
 
   if (timeLeft.isPast) {
     return (
-      <div className="w-full bg-paper-light/95 backdrop-blur-md rounded-xl p-3 border border-violet/25 shadow-xl text-center">
-        <span className="text-xs sm:text-sm font-display font-bold text-violet-deep">
+      <div className="w-full rounded-2xl bg-paper-light border border-violet/20 p-4 art-paper-shadow text-center">
+        <span className="text-sm font-display font-bold text-violet-deep">
           🎉 The gathering is taking place today!
         </span>
       </div>
@@ -106,59 +105,58 @@ export function Countdown({
       role="timer"
       aria-live="polite"
       aria-label={`${timeLeft.days} days until Unconditional Love 3`}
-      className="w-full bg-paper-light/95 sm:bg-paper-light/92 backdrop-blur-md rounded-xl p-2 sm:p-2.5 border border-violet/25 shadow-2xl text-ink transition-all"
+      className="w-full rounded-2xl bg-paper-light border border-violet/15 art-paper-shadow p-4 sm:p-5 text-ink transition-all"
     >
-      <div className="flex items-center justify-between px-1 pb-1.5 border-b border-violet/15">
-        <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-violet-deep">
-          <Sparkles className="w-3 h-3 text-gold-deep" aria-hidden="true" />
-          <span>Countdown to Gathering</span>
-        </div>
-        <span className="text-[10px] text-ink-subtle font-medium hidden xs:inline-block">
-          Wed, Jan 20, 2027 • 2:30 PM
-        </span>
+      <div className="flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-wider text-violet-deep mb-3.5">
+        <Sparkles className="w-3.5 h-3.5 text-gold-deep" aria-hidden="true" />
+        <span>Countdown to Gathering Day</span>
       </div>
 
-      <div className="grid grid-cols-4 gap-1.5 sm:gap-2 pt-2 text-center">
+      <div className="grid grid-cols-4 gap-2.5 sm:gap-3 w-full text-center">
         {/* Days - Bold & Forced */}
-        <div className="flex flex-col items-center justify-center py-1 sm:py-1.5 px-1 rounded-lg bg-violet/15 border border-violet/30 shadow-xs">
-          <span className="text-xl sm:text-2xl lg:text-3xl font-display font-black text-violet-deep leading-none">
+        <div className="flex flex-col items-center justify-center py-2.5 sm:py-3 px-1 rounded-xl bg-gradient-to-b from-violet-tint to-paper-light border border-violet/20 shadow-xs">
+          <span className="text-2xl sm:text-3xl font-display font-black text-violet-deep leading-none">
             {timeLeft.days}
           </span>
-          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-violet-deep mt-0.5">
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-violet-deep mt-1.5">
             Days
           </span>
         </div>
 
         {/* Hours */}
-        <div className="flex flex-col items-center justify-center py-1 sm:py-1.5 px-1 rounded-lg bg-coral/20 border border-coral/30 shadow-xs">
-          <span className="text-xl sm:text-2xl lg:text-3xl font-display font-black text-coral-deep leading-none">
+        <div className="flex flex-col items-center justify-center py-2.5 sm:py-3 px-1 rounded-xl bg-gradient-to-b from-coral-tint to-paper-light border border-coral/20 shadow-xs">
+          <span className="text-2xl sm:text-3xl font-display font-black text-coral-deep leading-none">
             {timeLeft.hours}
           </span>
-          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-coral-deep mt-0.5">
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-coral-deep mt-1.5">
             Hours
           </span>
         </div>
 
         {/* Mins */}
-        <div className="flex flex-col items-center justify-center py-1 sm:py-1.5 px-1 rounded-lg bg-gold/30 border border-gold/40 shadow-xs">
-          <span className="text-xl sm:text-2xl lg:text-3xl font-display font-black text-ink leading-none">
+        <div className="flex flex-col items-center justify-center py-2.5 sm:py-3 px-1 rounded-xl bg-gradient-to-b from-gold-tint to-paper-light border border-gold/25 shadow-xs">
+          <span className="text-2xl sm:text-3xl font-display font-black text-ink leading-none">
             {timeLeft.minutes}
           </span>
-          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-ink mt-0.5">
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-ink mt-1.5">
             Mins
           </span>
         </div>
 
         {/* Secs */}
-        <div className="flex flex-col items-center justify-center py-1 sm:py-1.5 px-1 rounded-lg bg-water/20 border border-water/30 shadow-xs">
-          <span className="text-xl sm:text-2xl lg:text-3xl font-display font-black text-water-deep leading-none">
+        <div className="flex flex-col items-center justify-center py-2.5 sm:py-3 px-1 rounded-xl bg-gradient-to-b from-water-tint to-paper-light border border-water/25 shadow-xs">
+          <span className="text-2xl sm:text-3xl font-display font-black text-water-deep leading-none">
             {timeLeft.seconds}
           </span>
-          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-water-deep mt-0.5">
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-water-deep mt-1.5">
             Secs
           </span>
         </div>
       </div>
+
+      <p className="text-[11px] text-ink-muted text-center mt-3 font-medium">
+        Wed, Jan 20, 2027 • 2:30 PM – 9:30 PM (Doors open 2:00 PM)
+      </p>
     </div>
   );
 }
